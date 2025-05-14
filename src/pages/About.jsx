@@ -32,7 +32,7 @@ export const About = () => {
         Explore the website, discover the offerings, and if you have any questions or suggestions, I'm here to listen. Your journey through this online shopping experience is as important to me as it is to you. Happy exploring!
       </p>
       <div className='flex justify-around w-[50%] mx-auto'>
-        <a href="">
+        <a href="www.linkedin.com/in/moses-maduakonam">
           <FaLinkedin className='text-[2rem] min-md:text-[3.5rem] text-gray-500 duration-150 ease-in hover:text-sky-700 cursor-pointer'/>
         </a>
         <a href="https://www.github.com/beealmighty">
