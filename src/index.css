@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@theme {
+  --color-clifford: #da373d;
+  --font-roboto: "Roboto", sans-serif; 
+  --font-script: Great Vibes, cursive;
+  --font-Aboreto: 'Aboreto';
+  --font-CormorantU: 'Cormorant Upright';
+  --color-purple: #703bf7;
+  --color-purple-dk: #602edf;
+  --color-dark-fade: #1a1a1b;
+  --animate-fade: fade 1s ease-in;
+}
+@layer base {
+  .button {
+    @apply px-[1rem] cursor-pointer py-[0.5rem] rounded-md
+  }
+}
+.skeleton-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-skeleton {
+  width: 6rem;
+}
+.bottom-skeleton {
+  width: 22rem;
+  height: 18rem;
+}
+.product-skeleton {
+  width: 22rem;
+  height: 16rem;
+}
+.image-skeleton {
+  height: 15rem;
+  width: 16rem
+}
+
+@media screen and (min-width: 600px){
+  .bottom-skeleton {
+    width: 16rem
+  }
+}
+@media screen and (min-width: 1180px){
+  .bottom-skeleton {
+    width: 20rem
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
