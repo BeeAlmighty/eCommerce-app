@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { ACTIONS, AppContext } from '../context/Context'
 import { Link } from 'react-router-dom';
 import { TiShoppingCart } from "react-icons/ti";
+import { Button } from './Button';
 
 export const Card = ({ data }) => {
   const {state, dispatch} = useContext(AppContext);
@@ -31,11 +32,10 @@ export const Card = ({ data }) => {
           <span className='font-CormorantU text-gray-400'>Price</span>
           <span className='font-script font-extrabold text-[1.4rem]'>{`$${data.price}`}</span>
         </div>
-        <button className={`${state.isDark ? 'bg-purple focus:border-gray-300' : 'bg-purple border-gray-700'}  duration-300 hover:bg-purple-800 text-white button flex items-center gap-[0.3rem] focus:border-2`} 
-          onClick={() => handleAddToCart(data.id)}>
+        <Button onSelect={() => handleAddToCart(data.id)}>
           <TiShoppingCart className='text-[1.5rem]'/>
           Add to cart
-        </button>
+        </Button>
       </div>
     </section>
   )

@@ -103,7 +103,7 @@ const initialState = {
   data: '',
   isLoading: false,
   errorMsg: '',
-  isDark: true,
+  isDark: false,
   isNav: false,
   visibleProductCount: 12,
   cartTotalQuantity: 0,

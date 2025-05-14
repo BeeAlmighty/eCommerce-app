@@ -12,7 +12,7 @@ export const Homepage = () => {
     {header: 'Simple Shopping System', text: 'Easily navigate through our hassle free website and find your needs', imgPath: 'image1'},
     {header: 'Quick Delivery', text: 'Have your wishlist delivered to you within minutes of placing an order', imgPath: 'image3'},
   ]
-  const { state, dispatch } = useContext(AppContext);
+  const { state, dispatch, handleActiveStates } = useContext(AppContext);
   const userImage = ['BG2', 'BG1', 'BG3'];
   const [selectedImage, setSelectImage] = useState(0);
   const categoriesUrl = 'https://api.escuelajs.co/api/v1/categories';
@@ -41,10 +41,10 @@ export const Homepage = () => {
           </p>
           <div className='flex gap-[2rem] items-center text-white'>
             <Link to='products'>
-              <button className='bg-purple py-[0.75rem] button hover:bg-purple-dk duration-150 ease-in'>Start Shopping</button>
+              <button onClick={handleActiveStates} className={`${state.isActive && 'border-1 border-white'} bg-purple py-[0.75rem] button hover:bg-purple-dk duration-150 ease-in`}>Start Shopping</button>
             </Link>
             <Link to='about'>
-              <button className='bg-gray-400 py-[0.75rem] button hover:bg-gray-500 ease-in duration-150'>Learn More</button>
+              <button className={`${state.isActive && 'border-1 border-white'} bg-gray-400 py-[0.75rem] button hover:bg-gray-500 ease-in duration-150`}>Learn More</button>
             </Link>
           </div>
         </div>

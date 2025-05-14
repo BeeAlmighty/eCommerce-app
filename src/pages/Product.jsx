@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ACTIONS, AppContext } from '../context/Context';
 import { TiShoppingCart } from "react-icons/ti";
 import { FaAngleLeft } from "react-icons/fa6";
+import { Button } from '../components/Button';
 
 export const Product = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -34,26 +35,25 @@ export const Product = () => {
             </div>
           </div>
          <div className='flex flex-col gap-[1rem] min-lg:justify-between'>
-            <div>
-              <p className='font-CormorantU text-2xl'>{data.title}</p>
-            </div>
-            <p className={`${state.isDark ? 'border-gray-400 ' : 'border-gray-300'} font-CormorantU border-1 text-[0.9rem] w-fit py-[0.25rem] px-[0.5rem] rounded-4xl`}>
-              {data.category.name}
-            </p>
+          <div>
+            <p className='font-CormorantU text-2xl'>{data.title}</p>
+          </div>
+          <p className={`${state.isDark ? 'border-gray-400 ' : 'border-gray-300'} font-CormorantU border-1 text-[0.9rem] w-fit py-[0.25rem] px-[0.5rem] rounded-4xl`}>
+            {data.category.name}
+          </p>
           <p className='text-[1rem] font-CormorantU text-gray-500'>{data.description}</p>
-            <div className='flex items-center justify-between'>
-              <div className='flex flex-col'>
-                <span className='text-[0.9rem] font-CormorantU'>Price</span>
-                <p className='font-CormorantU text-3xl font-extrabold text-white'>
-                  {'$' + totalPrice.toFixed(2)}
-                </p>
-              </div>
-              <button className={`${state.isDark ? '' : 'border-gray-700'} bg-purple-500 duration-300 hover:bg-purple-600 text-white button flex items-center gap-[0.3rem] justify-center focus:border-2`} 
-                onClick={() => handleAddToCart(data.id)}>
-                <TiShoppingCart className='text-[1.5rem]'/>
-                Add to cart
-              </button>
+          <div className='flex items-center justify-between'>
+            <div className='flex flex-col'>
+              <span className={`text-[0.9rem] font-CormorantU`}>Price</span>
+              <p className='font-CormorantU text-3xl font-extrabold'>
+                {'$' + totalPrice.toFixed(2)}
+              </p>
             </div>
+            <Button onSelect={() => handleAddToCart(data.id)}>
+              <TiShoppingCart className='text-[1.5rem]'/>
+              Add to cart
+            </Button>
+          </div>
          </div>
         </section>
       }
